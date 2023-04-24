@@ -22,7 +22,7 @@
 ### Setup
 - Open Folder phpsdk
 - invoke  `phpsdk-vc16-x64.bat`
-- `cd PHP-8.0.28\x64\vs16\PHP-8.0.28\ext` 
+- `run` 
 - `git clone https://github.com/BbenWeb1/php-opencv.git`
 - `cd php-opencv`
 -  `..\..\..\..\..\..\..\php-dev\phpize.bat`
