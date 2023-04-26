@@ -66,6 +66,13 @@ Invoke-WebRequest $urlsrc -OutFile $temp
 Expand-Archive $temp -DestinationPath "php-sdk\PHP-$phpversion\$arch\$vs\"
 Rename-Item -Path "php-sdk\PHP-$phpversion\$arch\$vs\php-src-PHP-$phpversion" "PHP-$phpversion"
 
+
+New-Item -Path "php-sdk\run.bat"
+
+Set-Content "php-sdk\run.bat" "@echo off `\r`n cd php-sdk\PHP-$phpversion\$arch\$vs\PHP-$phpversion"
+
+
+
 Write-Output "Install PHP $phpversion ..."
 
 $temp = New-TemporaryFile | Rename-Item -NewName {$_.Name + ".zip"} -PassThru
