@@ -69,7 +69,7 @@ Rename-Item -Path "php-sdk\PHP-$phpversion\$arch\$vs\php-src-PHP-$phpversion" "P
 
 New-Item -Path "php-sdk\run.bat"
 
-Set-Content "php-sdk\run.bat" "@echo off `\r`n cd php-sdk\PHP-$phpversion\$arch\$vs\PHP-$phpversion"
+Set-Content "php-sdk\run.bat" "@echo off `r`n cd php-sdk\PHP-$phpversion\$arch\$vs\PHP-$phpversion"
 
 
 

@@ -27,6 +27,7 @@
 - Open Folder phpsdk
 - invoke  `phpsdk-vc16-x64.bat`
 - `run` 
+- `cd ext`
 - `git clone https://github.com/BbenWeb1/php-opencv.git`
 - `cd php-opencv`
 -  `..\..\..\..\..\..\..\php-dev\phpize.bat`
