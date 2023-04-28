@@ -39,12 +39,12 @@ $phpversion = $releases.$version
 if (-not $phpversion) {
     $baseurl = "https://windows.php.net/downloads/releases"
     $url = "$baseurl/releases.json"
-    $releases = Invoke-WebRequest $url | ConvertFrom-Json
+    $releases = Invoke-WebRequest $url -UseBasicParsing | ConvertFrom-Json
     $phpversion = $releases.$version.version
     if (-not $phpversion) {
         $baseurl = "https://windows.php.net/downloads/qa"
         $url = "$baseurl/releases.json"
-        $releases = Invoke-WebRequest $url | ConvertFrom-Json
+        $releases = Invoke-WebRequest $url -UseBasicParsing | ConvertFrom-Json
         $phpversion = $releases.$version.version
         if (-not $phpversion) {
             throw "unknown version"
@@ -56,7 +56,7 @@ $tspart = if ($ts -eq "nts") {"nts-Win32"} else {"Win32"}
 
 ForEach ($Dir in ("bin","include","lib","share","template"))
     {
-        New-Item -ItemType Directory -Path php-sdk\PHP-$phpversion\$arch\$vs\deps\$Dir
+        New-Item -ItemType Directory -Path php-sdk\PHP-$phpversion\$arch\$vs\deps\$Dir | out-null
     } 
     
 Write-Output "Install PHP SRC $phpversion  ..."
@@ -67,7 +67,7 @@ Expand-Archive $temp -DestinationPath "php-sdk\PHP-$phpversion\$arch\$vs\"
 Rename-Item -Path "php-sdk\PHP-$phpversion\$arch\$vs\php-src-PHP-$phpversion" "PHP-$phpversion"
 
 
-New-Item -Path "php-sdk\run.bat"
+New-Item -Path "php-sdk\run.bat" | out-null
 
 Set-Content "php-sdk\run.bat" "@echo off `r`n cd php-sdk\PHP-$phpversion\$arch\$vs\PHP-$phpversion"
 
