@@ -2,7 +2,7 @@
  PHPSDK-SETUP to set up an environment for building and testing PHP extensions on Windows.
 ## NOTE 
 **The Project Is A Rewrite Of The Oreginal Project** 
-[Setup PHP-SDK](https://github.com/cmb69/setup-php-sdk)
+[Setup PHP-SDK](https://github.com/php/setup-php-sdk)
 
 
  ## 1-Download and Setup
