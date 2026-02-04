@@ -12,7 +12,7 @@
 
 ## Inputs
 - `version`: the PHP version to build for
-  (`7.0`, `7.1`, `7.2`, `7.3`, `7.4`, `8.0`,`8.1` or `8.2`)
+  (`7.0`, `7.1`, `7.2`, `7.3`, `7.4`, `8.0`,`8.1`,`8.2`,`8.3`,`8.4` or `8.5`)
 - `arch`: the architecture to build for (`x64` or `x86`)
 - `ts`: thread-safety (`nts` or `ts`)
 
