@@ -15,6 +15,9 @@ $versions = @{
     "8.0" = "vs16"
     "8.1" = "vs16"
     "8.2" = "vs16"
+    "8.3" = "vs16"
+    "8.4" = "vs17"
+    "8.5" = "vs17"
 }
 $vs = $versions.$version
 if (-not $vs) {
@@ -24,7 +27,7 @@ if (-not $vs) {
 Write-Output "Install PHP SDK ..."
 
 $temp = New-TemporaryFile | Rename-Item -NewName {$_.Name + ".zip"} -PassThru
-$url = "https://github.com/php/php-sdk-binary-tools/releases/download/php-sdk-2.3.0/php-sdk-binary-tools-php-sdk-2.3.0.zip"
+$url = "https://github.com/php/php-sdk-binary-tools/releases/download/php-sdk-2.6.0/php-sdk-binary-tools-php-sdk-2.6.0.zip"
 Invoke-WebRequest $url -OutFile $temp
 Expand-Archive $temp -DestinationPath "."
 Rename-Item "php-sdk-binary-tools-php-sdk-2.3.0" "php-sdk"
