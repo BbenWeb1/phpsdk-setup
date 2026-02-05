@@ -27,10 +27,10 @@ if (-not $vs) {
 Write-Output "Install PHP SDK ..."
 
 $temp = New-TemporaryFile | Rename-Item -NewName {$_.Name + ".zip"} -PassThru
-$url = "https://github.com/php/php-sdk-binary-tools/releases/download/php-sdk-2.6.0/php-sdk-binary-tools-php-sdk-2.6.0.zip"
+$url = "https://github.com//php/php-sdk-binary-tools/archive/refs/tags/php-sdk-2.6.0.zip"
 Invoke-WebRequest $url -OutFile $temp
-Expand-Archive $temp -DestinationPath "."
-Rename-Item "php-sdk-binary-tools-php-sdk-2.3.0" "php-sdk"
+Expand-Archive $temp -DestinationPath "." -Force
+Rename-Item "php-sdk-binary-tools-php-sdk-2.6.0" "php-sdk"
 $baseurl = "https://windows.php.net/downloads/releases/archives"
 $releases = @{
     "7.0" = "7.0.33"
